@@ -1,28 +1,32 @@
+
+/* Add wapping so that the child element is not controlled*/
 .App {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+.col-sm-4 {
+  float: left;
+  width: 20%;
+  height: 100%;
+  background-color: #eeeeee;
+  padding: 30px;
+  text-align: left;
+  font-family: "Verdana", cursive, sans-serif;
+}
+
+.col-sm-8{
+  float: right;
+  width: 80%;
+  height: 100%;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.room-name{
+  text-align: left;
+  color: gray;
 }
