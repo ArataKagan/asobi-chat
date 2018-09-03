@@ -7,7 +7,7 @@ class RoomList extends Component{
     super(props);
     this.state = {
       rooms: [],
-      newRoom : '',
+      newRoom : ' ',
       open: false
     };
     //accessing data from firebase
@@ -37,7 +37,7 @@ class RoomList extends Component{
       e.preventDefault();
       console.log(this.state.newRoom);
       
-      this.roomRef.push({
+      this.roomsRef.push({
         name: this.state.newRoom
       });
 
