@@ -8,7 +8,8 @@ class RoomList extends Component{
     this.state = {
       rooms: [],
       newRoom : ' ',
-      open: false
+      open: false, 
+      roomKeys: ' ',
     };
     //accessing data from firebase
     this.roomsRef = this.props.firebase.database().ref('rooms');
@@ -35,7 +36,7 @@ class RoomList extends Component{
     createRoom(e){
       // console.log('room created')
       e.preventDefault();
-      console.log(this.state.newRoom);
+      //console.log(this.state.newRoom);
       
       this.roomsRef.push({
         name: this.state.newRoom
@@ -45,8 +46,15 @@ class RoomList extends Component{
     };
 
     handleChange(e){
-      console.log('room created');
       this.setState({ newRoom: e.target.value });
+    }
+
+    roomNameClickHandler(e){
+      var selectedRoom = e.name;
+      var selectedRoomKey = e.key;
+      // console.log(selectedRoomKey);
+      this.props.roomNameHandlerFromParent(selectedRoom);
+      this.props.roomKeyHandlerFromParent(selectedRoomKey);
     }
 
     render(){
@@ -68,7 +76,7 @@ class RoomList extends Component{
 
           <li className='room_list'>
             {this.state.rooms.map((room, index) =>
-              <ul key={index}>{room.name}</ul>
+              <ul key={index} onClick = {(e) => this.roomNameClickHandler(room)}>{room.name}</ul>
             )}
           </li>
 
