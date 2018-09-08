@@ -26,7 +26,11 @@ class MessageList extends Component {
             <div className='messageList'>
                 {this.state.messages.filter((item) => item.roomId === this.props.activeRoomKeyfromParent)
                         .map((room, index) => ( 
-                        <p key='index'> <b>{room.username}</b> <p>{room.content}</p> </p> 
+                        <div className='messageBody' key={index}>
+                            <p key= {index + 1}> <b>{room.username}</b></p> 
+                            <p key= {index + 2}>{room.content}</p> 
+                            <p key= {index + 3}> {room.sentAt}</p> 
+                        </div>
                         ))}
             </div>
         )

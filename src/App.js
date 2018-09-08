@@ -4,6 +4,7 @@ import * as firebase from 'firebase';
 import RoomList from './components/RoomList'
 import MessageList from './components/MessageList'
 import User from './components/User'
+import SubmitMessage from './components/SubmitMessage'
 
 var config = {
     apiKey: "AIzaSyCphZRFH4a5RmE_poq1R_-CEe3trxj6qIg",
@@ -74,6 +75,12 @@ class App extends Component {
               // passing the active room key to the MessageList
               activeRoomKeyfromParent={this.state.activeRoomKey}
             />
+
+          <SubmitMessage
+            firebase={ firebase }
+            userInfo={ this.state.user } 
+            roomId={ this.state.activeRoomKey }
+          />
         </aside>
       </div>
     );
