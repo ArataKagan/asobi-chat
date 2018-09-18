@@ -29,5 +29,17 @@
 .room-name{
   text-align: left;
   color: gray;
+} 
+
+.outer_room_list {
+  overflow: auto;
 }
+
+.inner_room_list {
+  
+  
+
+} 
+
+
 

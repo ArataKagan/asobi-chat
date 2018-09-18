@@ -40,7 +40,22 @@ class App extends Component {
     this.setState({
       activeRoomKey : roomKey
     });
+  } 
+
+  // delete room key
+  deleteActiveRoomKey = () => {
+    this.setState({
+      activeRoomKey : null
+    });
+  } 
+
+  // delete room name
+  deleteActiveRoomName = () => {
+    this.setState({
+      activeRoomName : null
+    });
   }
+
 
   setUser = (value) => {
     console.log(value);
@@ -48,7 +63,6 @@ class App extends Component {
       user : value
     });
     console.log(this.state.user.displayName);
-
   }
 
   render() {
@@ -60,7 +74,9 @@ class App extends Component {
               firebase={ firebase } 
               // get room name and room key from RoomList 
               roomNameHandlerFromParent={this.getActiveRoomName} 
-              roomKeyHandlerFromParent={this.getActiveRoomKey}
+              roomKeyHandlerFromParent={this.getActiveRoomKey} 
+              deleteRoomKeyHandler={this.deleteActiveRoomKey}
+              deleteRoomNameHandler={this.deleteActiveRoomName}
             />
         </header>
         <aside className='col-sm-8'>

@@ -57,6 +57,24 @@ class RoomList extends Component{
       this.props.roomKeyHandlerFromParent(selectedRoomKey);
     }
 
+    removeRoomHandler(e){
+      // remove the child node from firebase
+      var selectedRoomKey = e.key;
+      var selectedRoomName = e.name;
+      this.roomsRef.child(selectedRoomKey).set(null);
+      var indexed_val = this.state.rooms.indexOf(e);
+      
+      // passing the room key to delete
+      this.props.deleteRoomKeyHandler(selectedRoomKey);
+      // passing the room name to delete
+      this.props.deleteRoomNameHandler(selectedRoomName);
+
+      // remove the room name from the list
+      const rooms = this.state.rooms.slice();
+      const room = rooms[indexed_val];
+      this.setState({rooms: this.state.rooms.filter(item => item !== room)}); 
+    }
+
     render(){
       return(
         <div>
@@ -76,7 +94,12 @@ class RoomList extends Component{
 
           <li className='room_list'>
             {this.state.rooms.map((room, index) =>
-              <ul key={index} onClick = {(e) => this.roomNameClickHandler(room)}>{room.name}</ul>
+            <div className='outer_room_list'>
+              <div className='inner_room_list' key={index - 1}>
+                <ul key={index} onClick = {(e) => this.roomNameClickHandler(room)}>{room.name}</ul>
+                <span key={index + 1} className='icon ion-md-trash' onClick = {() => this.removeRoomHandler(room)}></span>
+              </div>
+            </div>
             )}
           </li>
 
