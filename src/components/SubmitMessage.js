@@ -5,13 +5,13 @@ class SubmitMessage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            content : '',
+            content : ''
         }
     this.messageRef = this.props.firebase.database().ref('Messages');
     
     }
 
-    newMessage(e){
+    createMessage(e){
         e.preventDefault();
         console.log(e);
         if(!this.state.content){
@@ -20,10 +20,11 @@ class SubmitMessage extends Component {
             this.messageRef.push({
                 username : this.props.userInfo ? this.props.userInfo.displayName : 'Guest', 
                 content : this.state.content, 
-                sentAt : moment(this.props.firebase.database.ServerValue.TIMESTAMP).utcOffset(60).format('YYYY-MM-DD HH:mm'),
+                sentAt : moment(this.props.firebase.database.ServerValue.TIMESTAMP).format('YYYY-MM-DD hh:mm:ss'),
                 roomId : this.props.roomId
             })
-        } 
+        }
+        this.setState({content: ' '});
     }
 
     onChange(e){
@@ -34,7 +35,7 @@ class SubmitMessage extends Component {
 
     render(){
         return(
-            <form onSubmit={(e) => this.newMessage(e)}>
+            <form onSubmit={(e) => this.createMessage(e)}>
                 <textarea rows='4' cols='100' placeholder='Type your message here..' 
                 onChange={(e) => this.onChange(e)} 
                 value={this.state.content}> </textarea>
