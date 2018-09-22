@@ -21,6 +21,20 @@ class MessageList extends Component {
         })   
     } 
 
+    deleteMessage(e){
+        var messageKey = e.key;
+        this.messageRef.child(messageKey).set(null);
+
+        this.removeMessageFromScreen(e);
+    }
+
+    removeMessageFromScreen(e){
+        const messages = this.state.messages.slice();
+        const messageIndex = this.state.messages.indexOf(e);
+        const message = messages[messageIndex]; 
+        this.setState({ messages: this.state.messages.filter((item) => item !== message)});
+    }
+
     render(){
         return(
             <div className='messageList'>
@@ -30,6 +44,7 @@ class MessageList extends Component {
                             <p key= {index + 1}> <b>{room.username}</b></p> 
                             <p key= {index + 2}>{room.content}</p> 
                             <p key= {index + 3}> {room.sentAt}</p> 
+                            <button onClick={() => this.deleteMessage(room)}>Delete</button>
                         </div>
                         ))}
             </div>
