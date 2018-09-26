@@ -41,11 +41,13 @@ class MessageList extends Component {
                 {this.state.messages.filter((item) => item.roomId === this.props.activeRoomKeyfromParent)
                         .map((room, index) => ( 
                         <div className='messageBody' key={index}>
-                            <p key= {index + 1}> <b>{room.username}</b></p> 
-                            <p key= {index + 2}>{room.content}</p> 
-                            <p key= {index + 3}> {room.sentAt}</p> 
-                            <button onClick={() => this.deleteMessage(room)}>Delete</button>
+                            <span key= {index + 1} className='rowName'> <b>{room.username}</b></span><br />
+                            <span onClick={() => this.deleteMessage(room)} className='icon ion-md-trash messsage'></span> 
+                            <p key= {index + 2} className='rowContent'>{room.content}</p> 
+                            <span key= {index + 3} className='rowDate'> {room.sentAt}</span>
+                            
                         </div>
+                         
                         ))}
             </div>
         )

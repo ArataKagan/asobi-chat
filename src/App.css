@@ -8,7 +8,6 @@
   bottom: 0;
 }
 
-
 .col-sm-4 {
   float: left;
   width: 20%;
@@ -20,11 +19,18 @@
 }
 
 .col-sm-8{
-  float: right;
+  float: left;
   width: 80%;
   height: 100%;
-  text-align: center;
+  /* text-align: center; */
 }
+
+.messageList {
+  margin: 0 auto; 
+  max-width: 1000px; 
+  padding: 0 20px; 
+}
+
 
 .room-name{
   text-align: left;
@@ -35,11 +41,64 @@
   overflow: auto;
 }
 
-.inner_room_list {
-  
-  
-
+.messageBody {
+  border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
 } 
+
+.messageBody::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.rowName {
+  float: left;
+  clear: right;
+}
+
+.rowContent {
+  float: left;
+  clear: right;
+}
+
+.rowDate {
+  float: right;
+}
+
+.ion-md-trash messsage {
+  float: right;
+  font-size: larger;
+} 
+
+.submitForm {
+  display: flex;
+}
+
+ .textArea {
+  flex: 1;
+  position: fixed;
+  bottom: 0;
+  display: inline-block;
+}
+
+.submitBtn {
+  width: 200px;
+  position: fixed;
+  bottom: 0;
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
 
 
 

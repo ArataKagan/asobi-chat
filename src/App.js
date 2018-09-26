@@ -91,12 +91,14 @@ class App extends Component {
               // passing the active room key to the MessageList
               activeRoomKeyfromParent={this.state.activeRoomKey}
             />
-
+          
           <SubmitMessage
             firebase={ firebase }
             userInfo={ this.state.user } 
             roomId={ this.state.activeRoomKey }
           />
+          
+          
         </aside>
       </div>
     );

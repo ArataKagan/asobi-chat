@@ -35,11 +35,11 @@ class SubmitMessage extends Component {
 
     render(){
         return(
-            <form onSubmit={(e) => this.createMessage(e)}>
-                <textarea rows='4' cols='100' placeholder='Type your message here..' 
+            <form onSubmit={(e) => this.createMessage(e)} className='submitForm'>
+                <textarea rows='2' cols='100' placeholder='Type your message here..' 
                 onChange={(e) => this.onChange(e)} 
-                value={this.state.content}> </textarea>
-                <input type='submit' />
+                value={this.state.content} className='textArea'> </textarea>
+                <input type='submit' className='submitBtn'/>
             </form>
         )
     };  
