@@ -84,8 +84,9 @@ class RoomList extends Component{
                   Enter a room name:
                   <input type="text" value={this.state.newRoom} onChange={(e) => this.handleChange(e)} />
                   </label>
-                <input type='submit' />
+                <input type='submit' /> 
               </form>
+              <input type='button' value='Cancel' onClick={this.closeModal}></input>
           </Popup>
 
           <li className='room_list'>
