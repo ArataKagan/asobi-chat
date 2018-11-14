@@ -71,6 +71,8 @@ class RoomList extends Component{
       this.setState({rooms: this.state.rooms.filter(item => item !== room)}); 
     }
 
+    
+
     render(){
       return(
         <div>
@@ -91,12 +93,10 @@ class RoomList extends Component{
 
           <li className='room_list'>
             {this.state.rooms.map((room, index) =>
-            <div key={index - 2} className='outer_room_list'>
               <div className='inner_room_list' key={index - 1}>
-                <ul key={index} onClick = {(e) => this.roomNameClickHandler(room)}>{room.name}</ul>
+                <ul key={index} onClick = {(e) => this.roomNameClickHandler(room)} className='room_name'>{room.name}</ul>
                 <span key={index + 1} className='icon ion-md-trash' onClick = {() => this.removeRoomHandler(room)}></span>
               </div>
-            </div>
             )}
           </li>
 

@@ -56,7 +56,6 @@ class App extends Component {
     });
   }
 
-
   setUser = (value) => {
     console.log(value);
     this.setState({
