@@ -1,4 +1,4 @@
-![chat-room-image](https://imgur.com/UdscVOt)
+![chat-room-image](https://imgur.com/a/pZkkF2R)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
