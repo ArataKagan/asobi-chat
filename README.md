@@ -1,3 +1,5 @@
+![chat-room-image](https://imgur.com/a/pZkkF2R)
+
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/pZkkF2R"><a href="//imgur.com/pZkkF2R"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
