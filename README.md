@@ -1,5 +1,5 @@
-![chat-room-image](./2018-11-13_1810.svg)
-<img src="./2018-11-13_1810.svg">
+![chat-room-image](https://github.com/ArataKagan/bloc-chat-react/blob/master/2018-11-13_1810.svg)
+<img src="https://github.com/ArataKagan/bloc-chat-react/blob/master/2018-11-13_1810.svg">
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
