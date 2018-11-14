@@ -40,9 +40,13 @@ class User extends Component{
             <h5>You are logged in as guest</h5>
 
         return(
-            <div>
-                {userInfo}
-                {authButton}
+            <div className = 'user_authentication'>
+                <div id='auth_info'>
+                    {userInfo}
+                </div>
+                <div id='auth_botton'>
+                    {authButton}
+                </div>
             </div>
         );
     }
