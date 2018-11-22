@@ -68,7 +68,7 @@ class App extends Component {
     return (
       <div className="App" >
         <header className='col-sm-4'>
-          <h3 id='room-name-title'>Bloc Chat</h3>
+          <h3 id='room-name-title' style={{fontFamily: 'Concert One'}}>Asobi Chat</h3>
           <RoomList 
               firebase={ firebase } 
               // get room name and room key from RoomList 
@@ -84,7 +84,7 @@ class App extends Component {
             setUser={this.setUser}
             userInfo={this.state.user}
             />
-          <h3>{this.state.activeRoomName}</h3>
+          <h3 style={{fontFamily: 'Concert One'}}>{this.state.activeRoomName}</h3>
           <MessageList 
               firebase={ firebase } 
               // passing the active room key to the MessageList
