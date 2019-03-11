@@ -7,8 +7,10 @@
     "moment": "^2.22.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-redux": "^6.0.1",
     "react-scripts": "1.1.5",
-    "reactjs-popup": "^1.2.0"
+    "reactjs-popup": "^1.2.0",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

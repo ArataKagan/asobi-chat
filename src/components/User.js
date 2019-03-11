@@ -36,8 +36,8 @@ class User extends Component{
             <button className='sign_in_btn' onClick={this.logIn}>Sign In</button> 
 
         let userInfo = this.props.userInfo ? 
-            <h5 style={{fontFamily: 'Concert One'}}>You are logged in as {this.props.userInfo.displayName}</h5> :
-            <h5 style={{fontFamily: 'Concert One'}}>You are logged in as guest</h5>
+            <h5 style={{fontFamily: 'Helvetica'}}>You are logged in as {this.props.userInfo.displayName}</h5> :
+            <h5 style={{fontFamily: 'Helvetica'}}>You are logged in as guest</h5>
 
         return(
             <div className = 'user_authentication'>

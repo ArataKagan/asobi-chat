@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+
 import './App.css';
 import * as firebase from 'firebase';
 import RoomList from './components/RoomList'
@@ -35,8 +37,6 @@ class App extends Component {
   }
   // get room key from RoomList and store into state
   getActiveRoomKey = (roomKey) => {
-    console.log('App: before storing room key into state')
-    console.log(roomKey);
     this.setState({
       activeRoomKey : roomKey
     });
@@ -68,7 +68,7 @@ class App extends Component {
     return (
       <div className="App" >
         <header className='col-sm-4'>
-          <h3 id='room-name-title' style={{fontFamily: 'Concert One'}}>Asobi Chat</h3>
+          <h3 id='room-name-title' style={{fontFamily: 'Helvetica'}}>Asobi Chat</h3>
           <RoomList 
               firebase={ firebase } 
               // get room name and room key from RoomList 
@@ -84,7 +84,7 @@ class App extends Component {
             setUser={this.setUser}
             userInfo={this.state.user}
             />
-          <h3 style={{fontFamily: 'Concert One'}}>{this.state.activeRoomName}</h3>
+          <h3 style={{fontFamily: 'Helvetica'}}>{this.state.activeRoomName}</h3>
           <MessageList 
               firebase={ firebase } 
               // passing the active room key to the MessageList
@@ -104,4 +104,16 @@ class App extends Component {
   }
 }
 
+// const mapStateToProps = state => {
+//   return {
+//       actRoomName: state.activeRoomName
+//   };
+// }
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+
+
+//   }
+// }
 export default App;
