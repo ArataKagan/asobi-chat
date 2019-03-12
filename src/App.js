@@ -3,11 +3,12 @@ import {connect} from 'react-redux';
 
 import './App.css';
 import * as firebase from 'firebase';
-import RoomList from './components/RoomList'
-import MessageList from './components/MessageList'
-import User from './components/User'
-import SubmitMessage from './components/SubmitMessage'
-import Nav from './components/Nav'
+import RoomList from './components/RoomList';
+import MessageList from './components/MessageList';
+import User from './components/User';
+import SubmitMessage from './components/SubmitMessage';
+import Nav from './components/Nav';
+import logo from './assets/logo.png';
 
 var config = {
     apiKey: "AIzaSyCphZRFH4a5RmE_poq1R_-CEe3trxj6qIg",
@@ -66,18 +67,19 @@ class App extends Component {
   }
 
   render() {
+    console.log(logo);
     return (
       <div className="App" >
       <div className="container-fluid">
         <div className="row">
         <div class="sidebar-nav-fixed">
             <div className='col-sm-4 sidebar'>
-            <User 
+              <img  src={logo} alt='logo'/>
+              <User 
                 firebase={ firebase }
                 setUser={this.setUser}
                 userInfo={this.state.user}
                 />
-              <h3 id='room-name-title' style={{fontFamily: 'Helvetica'}}>Asobi Chat</h3>
               <RoomList 
                   firebase={ firebase } 
                   // get room name and room key from RoomList 

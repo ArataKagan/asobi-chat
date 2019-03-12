@@ -32,12 +32,12 @@ class User extends Component{
 
     render(){
         let authButton = this.props.userInfo ? 
-            <button className='sign_out_btn' onClick={this.logOut}>Sign Out</button> :
-            <button className='sign_in_btn' onClick={this.logIn}>Sign In</button> 
+            <button className='sign_in_out_btn' onClick={this.logOut}>Sign Out</button> :
+            <button className='sign_in_out_btn' onClick={this.logIn}>Sign In</button> 
 
         let userInfo = this.props.userInfo ? 
-            <h5 style={{fontFamily: 'Helvetica'}}>{this.props.userInfo.displayName}</h5> :
-            <h5 style={{fontFamily: 'Helvetica'}}>Guest</h5>
+            <p>{this.props.userInfo.displayName}</p> :
+            <p>Guest</p>
 
         return(
             <div className = 'user_authentication'>

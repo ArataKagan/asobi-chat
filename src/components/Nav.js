@@ -1,11 +1,12 @@
 import React from 'react';
 
 const Nav = (props) => {
-    return(
+    const chatTitle = props.chatTitle;
+    return (
         <div className='chat-title'>
-            <h5>{props.chatTitle}</h5>
+            {chatTitle ? chatTitle : null}
         </div>
-    ) 
+    )
 }
 
 export default Nav;

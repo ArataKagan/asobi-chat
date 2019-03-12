@@ -1,7 +1,5 @@
-/* Add wapping so that the child element is not controlled*/
 .container {
   margin: 0px;
-
 }
 
 .App {
@@ -14,6 +12,8 @@
   min-height: 100%;
 }
 
+/* sidebar */
+
 .col-sm-4 {
   float: left;
   min-width: 100%;
@@ -22,11 +22,93 @@
   height: 100%;
   color: #EBEDED;
   background-color: gray;
-  background-image: linear-gradient(gray, #eee);
+  background-image: linear-gradient(gray, #CBCACA);
   padding: 30px;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif, sans-serif, cursive;
 }
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.inner_room_list {
+  margin: 20px auto;
+  color:#EBEDED;
+} 
+
+.inner_room_list .ion-md-trash {
+  color: #EBEDED;
+}
+
+
+.sidebar-nav-fixed ul {
+  padding: 0;
+}
+
+.sidebar-nav-fixed {
+  margin-left: -250px;
+  left: 250px; 
+  width: 250px;
+  background: #CCC;
+  position: fixed;
+  height: 100%;   
+  /* overflow-y: auto;  */
+  /* z-index: 1000;
+  transition: all 0.4s ease 0s; */
+} 
+
+
+.user_authentication {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  align-items: center; 
+  justify-content: flex-end;
+}
+
+#auth_info {
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+  color: #716E6E;
+  font-size: 10px;
+  padding-right: 10px;
+}
+
+#auth_botton {
+  display: flex;
+  flex: 1;
+  margin-bottom: 15px;
+}
+
+.sign_in_out_btn {
+  background: rgb(58, 48, 48);
+  color: white;
+  size: 5px;
+  border-radius: 7px;
+}
+
+#create_room_btn {
+  background: #716E6E;
+  color: white;
+  size: 5px;
+  border-radius: 7px;
+}
+
+.room_name {
+  font-family: Helvetica, sans-serif, cursive;
+  clear: right;
+  display: inline;
+  margin-right: 10px;
+  padding-left: 0px;
+  font-size: 15px;
+  color: #EBEDED;
+}
+
+
+/* Main Chat  */
 
 .col-sm-8{
   font-family: Helvetica, sans-serif, cursive;
@@ -42,46 +124,19 @@
   margin: 0 auto; 
   max-width: 1000px; 
   padding: 0px; 
-  padding-bottom: 60px;
+  padding-bottom: 15%;
 }
-
-.room-name-title{
-  font-family: Helvetica, sans-serif, cursive;
-  color: #EBEDED;
-}
-
-.room-name{
-  font-family: Helvetica, sans-serif, cursive;
-  text-align: left;
-  color: #EBEDED;
-} 
 
 .chat-title {
-  font-size: 10px;
-  border-bottom: 2px solid black;
+  font-size: 25px;
+  font-family: Verdana, sans-serif;
+  padding-top: 5%;
+  padding-bottom: 3%;
 }
 
-.inner_room_list {
-  margin: 20px auto;
-  color:#EBEDED;
-} 
-
-.inner_room_list .ion-md-trash {
-  color: #EBEDED;
-}
-
-.room_name {
-  font-family: Helvetica, sans-serif, cursive;
-  clear: right;
-  display: inline;
-  margin-right: 10px;
-  padding-left: 0px;
-  font-size: 15px;
-  color: #EBEDED;
-}
 
 .messageBody {
-  border: 2px solid #eee7e7;
+  /* border: 2px solid #eee7e7; */
     background-color: #f1f1f1;
     border-radius: 5px;
     padding: 10px;
@@ -147,44 +202,6 @@
   right: 0;
   background-color: rgb(58, 48, 48);
   color: white;
-} 
-
-.user_authentication {
-  display: flex;
-  width: 100%;
-  height: 100px;
-  align-items: center; 
-  justify-content: flex-end;
-}
-
-#auth_info {
-  display: flex;
-  width: 130px;
-  color: #716E6E;
-  font-size: 10px;
-}
-
-#auth_botton {
-  display: flex;
-  flex: 1;
-}
-
-
-
-.sidebar-nav-fixed ul {
-  padding: 0;
-}
-
-.sidebar-nav-fixed {
-  margin-left: -250px;
-  left: 250px; 
-  width: 250px;
-  background: #CCC;
-  position: fixed;
-  height: 100%;   
-  /* overflow-y: auto;  */
-  /* z-index: 1000;
-  transition: all 0.4s ease 0s; */
 } 
 
 

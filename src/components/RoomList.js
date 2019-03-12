@@ -75,8 +75,8 @@ class RoomList extends Component{
 
     render(){
       return(
-        <div data-spy="affix" data-offset-top="150" data-offset-bottom="800">
-          <button className='room_btn' onClick={this.openModal}>Create New Room</button>
+        <div>
+          <button id='create_room_btn' onClick={this.openModal}>New Room</button>
           <Popup
             open={this.state.open}
             closeOnDocumentClick
