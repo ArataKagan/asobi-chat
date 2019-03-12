@@ -7,6 +7,7 @@ import RoomList from './components/RoomList'
 import MessageList from './components/MessageList'
 import User from './components/User'
 import SubmitMessage from './components/SubmitMessage'
+import Nav from './components/Nav'
 
 var config = {
     apiKey: "AIzaSyCphZRFH4a5RmE_poq1R_-CEe3trxj6qIg",
@@ -71,7 +72,11 @@ class App extends Component {
         <div className="row">
         <div class="sidebar-nav-fixed">
             <div className='col-sm-4 sidebar'>
-            
+            <User 
+                firebase={ firebase }
+                setUser={this.setUser}
+                userInfo={this.state.user}
+                />
               <h3 id='room-name-title' style={{fontFamily: 'Helvetica'}}>Asobi Chat</h3>
               <RoomList 
                   firebase={ firebase } 
@@ -84,12 +89,9 @@ class App extends Component {
             </div>
           </div>
             <div className='col-sm-8'>
-              <User 
-                firebase={ firebase }
-                setUser={this.setUser}
-                userInfo={this.state.user}
+                <Nav
+                  chatTitle={this.state.activeRoomName}
                 />
-              <h3 style={{fontFamily: 'Helvetica'}}>{this.state.activeRoomName}</h3>
               <MessageList 
                   firebase={ firebase } 
                   // passing the active room key to the MessageList
