@@ -67,38 +67,45 @@ class App extends Component {
   render() {
     return (
       <div className="App" >
-        <header className='col-sm-4'>
-          <h3 id='room-name-title' style={{fontFamily: 'Helvetica'}}>Asobi Chat</h3>
-          <RoomList 
-              firebase={ firebase } 
-              // get room name and room key from RoomList 
-              roomNameHandlerFromParent={this.getActiveRoomName} 
-              roomKeyHandlerFromParent={this.getActiveRoomKey} 
-              deleteRoomKeyHandler={this.deleteActiveRoomKey}
-              deleteRoomNameHandler={this.deleteActiveRoomName}
-            />
-        </header>
-        <aside className='col-sm-8'>
-          <User 
-            firebase={ firebase }
-            setUser={this.setUser}
-            userInfo={this.state.user}
-            />
-          <h3 style={{fontFamily: 'Helvetica'}}>{this.state.activeRoomName}</h3>
-          <MessageList 
-              firebase={ firebase } 
-              // passing the active room key to the MessageList
-              activeRoomKeyfromParent={this.state.activeRoomKey}
-            />
+      <div className="container-fluid">
+        <div className="row">
+        <div class="sidebar-nav-fixed">
+            <div className='col-sm-4 sidebar'>
+            
+              <h3 id='room-name-title' style={{fontFamily: 'Helvetica'}}>Asobi Chat</h3>
+              <RoomList 
+                  firebase={ firebase } 
+                  // get room name and room key from RoomList 
+                  roomNameHandlerFromParent={this.getActiveRoomName} 
+                  roomKeyHandlerFromParent={this.getActiveRoomKey} 
+                  deleteRoomKeyHandler={this.deleteActiveRoomKey}
+                  deleteRoomNameHandler={this.deleteActiveRoomName}
+                />
+            </div>
+          </div>
+            <div className='col-sm-8'>
+              <User 
+                firebase={ firebase }
+                setUser={this.setUser}
+                userInfo={this.state.user}
+                />
+              <h3 style={{fontFamily: 'Helvetica'}}>{this.state.activeRoomName}</h3>
+              <MessageList 
+                  firebase={ firebase } 
+                  // passing the active room key to the MessageList
+                  activeRoomKeyfromParent={this.state.activeRoomKey}
+                />
+              
+              <SubmitMessage
+                firebase={ firebase }
+                userInfo={ this.state.user } 
+                roomId={ this.state.activeRoomKey }
+              />
           
-          <SubmitMessage
-            firebase={ firebase }
-            userInfo={ this.state.user } 
-            roomId={ this.state.activeRoomKey }
-          />
           
-          
-        </aside>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

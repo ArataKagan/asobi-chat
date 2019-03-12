@@ -1,4 +1,9 @@
 /* Add wapping so that the child element is not controlled*/
+.container {
+  margin: 0px;
+
+}
+
 .App {
   font-family: Arial, Helvetica, sans-serif, cursive;
   position: absolute;
@@ -6,12 +11,13 @@
   top: 0;
   right: 0;
   bottom: 0;
-  height: 100%;
+  min-height: 100%;
 }
 
 .col-sm-4 {
   float: left;
-  width: 20%;
+  min-width: 100%;
+  padding: 10px;
   height: 100%;
   color: #EBEDED;
   background-color: gray;
@@ -26,6 +32,7 @@
   float: left;
   width: 100%;
   height: 100%;
+  margin-left: 250px;
   /* text-align: center; */
 }
 
@@ -142,6 +149,56 @@
 #auth_botton {
   float: right;
 }
+
+
+.sidebar-nav-fixed ul {
+  padding: 0;
+}
+
+.sidebar-nav-fixed {
+  margin-left: -250px;
+  left: 250px; 
+  width: 250px;
+  background: #CCC;
+  position: fixed;
+  height: 100%;   
+  /* overflow-y: auto;  */
+  /* z-index: 1000;
+  transition: all 0.4s ease 0s; */
+} 
+
+
+
+/* @media (max-width:767px) {
+
+  #wrapper {
+    padding-right: 0;
+  }
+
+  #sidebar-wrapper {
+    right: 0;
+  }
+
+  #wrapper.active {
+    position: relative;
+    right: 250px;
+  }
+
+  #wrapper.active #sidebar-wrapper {
+    right: 250px;
+    width: 250px;
+    transition: all 0.4s ease 0s;
+  }
+
+} */
+
+
+
+
+
+
+
+
 
 
 

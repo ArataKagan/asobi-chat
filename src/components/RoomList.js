@@ -75,7 +75,7 @@ class RoomList extends Component{
 
     render(){
       return(
-        <div>
+        <div data-spy="affix" data-offset-top="150" data-offset-bottom="800">
           <button className='room_btn' onClick={this.openModal}>Create New Room</button>
           <Popup
             open={this.state.open}
@@ -90,15 +90,17 @@ class RoomList extends Component{
               </form>
               <input type='button' value='Cancel' onClick={this.closeModal}></input>
           </Popup>
+          
+            <ul className="sidebar-nav">
+              {this.state.rooms.map((room, index) =>
+                <div className='inner_room_list' key={index - 1}>
+                  <li key={index} onClick = {(e) => this.roomNameClickHandler(room)} className='room_name'>{room.name}</li>
+                  <span key={index + 1} className='icon ion-md-trash' onClick = {() => this.removeRoomHandler(room)}></span>
+                </div>
+              )}
+            </ul>
+        
 
-          <li className='room_list'>
-            {this.state.rooms.map((room, index) =>
-              <div className='inner_room_list' key={index - 1}>
-                <ul key={index} onClick = {(e) => this.roomNameClickHandler(room)} className='room_name'>{room.name}</ul>
-                <span key={index + 1} className='icon ion-md-trash' onClick = {() => this.removeRoomHandler(room)}></span>
-              </div>
-            )}
-          </li>
 
         </div>
     );
