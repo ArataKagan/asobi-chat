@@ -8,19 +8,17 @@ class SubmitMessage extends Component {
             content : ''
         }
     this.messageRef = this.props.firebase.database().ref('Messages');
-    
     }
 
     createMessage(e){
         e.preventDefault();
-        console.log(e);
         if(!this.state.content){
             return null
         } else if (this.state.content){
             this.messageRef.push({
                 username : this.props.userInfo ? this.props.userInfo.displayName : 'Guest', 
                 content : this.state.content, 
-                sentAt : moment(this.props.firebase.database.ServerValue.TIMESTAMP).format('YYYY-MM-DD hh:mm:ss'),
+                sentAt : moment(this.props.firebase.database.ServerValue.TIMESTAMP).format('MMMM Do YYYY, h:mm:ss a'),
                 roomId : this.props.roomId
             })
         }

@@ -1,32 +1,23 @@
 import React, { Component } from 'react'; 
-
-
 class User extends Component{
-  
 
     logIn = () => {
-        console.log('before logged in');
         const provider = new this.props.firebase.auth.GoogleAuthProvider();
         this.props.firebase.auth().signInWithPopup(provider).then((result) => {
             this.props.setUser(result.user);
         })
-        console.log('after logged in');
     }
 
     logOut = () => {
-        console.log('before logging out');
         this.props.firebase.auth().signOut().then((result) => {
             this.props.setUser('null');
         })
-        console.log('after logging out');
     }
 
     componentDidMount(){
-        console.log('before mounted');
         this.props.firebase.auth().onAuthStateChanged( user => {
             this.props.setUser(user);
         });
-        console.log('after mounted');
     };
 
 

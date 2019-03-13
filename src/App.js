@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
 
 import './App.css';
 import * as firebase from 'firebase';
@@ -59,20 +59,17 @@ class App extends Component {
   }
 
   setUser = (value) => {
-    console.log(value);
     this.setState({
       user : value
     });
-    console.log(this.state.user.displayName);
   }
 
   render() {
-    console.log(logo);
     return (
       <div className="App" >
       <div className="container-fluid">
         <div className="row">
-        <div class="sidebar-nav-fixed">
+        <div className="sidebar-nav-fixed">
             <div className='col-sm-4 sidebar'>
               <img  src={logo} alt='logo'/>
               <User 
