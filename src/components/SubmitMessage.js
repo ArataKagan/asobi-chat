@@ -15,10 +15,11 @@ class SubmitMessage extends Component {
         if(!this.state.content){
             return null
         } else if (this.state.content){
+            const currentTime = new Date().getTime();
             this.messageRef.push({
                 username : this.props.userInfo ? this.props.userInfo.displayName : 'Guest', 
                 content : this.state.content, 
-                sentAt : moment(this.props.firebase.database.ServerValue.TIMESTAMP).format('MMMM Do YYYY, h:mm:ss a'),
+                sentAt : moment(currentTime).format('MMMM Do YYYY, h:mm:ss a'),
                 roomId : this.props.roomId
             })
         }
