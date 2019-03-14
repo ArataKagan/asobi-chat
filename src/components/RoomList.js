@@ -86,7 +86,6 @@ class RoomList extends Component{
                   </label>
                 <input type='submit' /> 
               </form>
-              <input type='button' value='Cancel' onClick={this.closeModal}></input>
         </Popup>
 
       return(
