@@ -34,6 +34,7 @@ class RoomList extends Component{
     };
 
     createRoom(e){
+      console.log('opened');
       e.preventDefault();
       this.roomsRef.push({
         name: this.state.newRoom
@@ -74,34 +75,32 @@ class RoomList extends Component{
     
 
     render(){
-      return(
-        <div>
-          <button id='create_room_btn' onClick={this.openModal}>New Room</button>
-          <Popup
+      const popup =  <Popup
             open={this.state.open}
             closeOnDocumentClick
             onClose={this.closeModal}>
               <form onSubmit={(e) => this.createRoom(e) } >
-                <label>
-                  Enter a room name:
-                  <input type="text" value={this.state.newRoom} onChange={(e) => this.handleChange(e)} />
+                  <label>
+                    Enter a room name:
+                    <input type="text" value={this.state.newRoom} onChange={(e) => this.handleChange(e)} />
                   </label>
                 <input type='submit' /> 
               </form>
               <input type='button' value='Cancel' onClick={this.closeModal}></input>
-          </Popup>
-          
-            <ul className="sidebar-nav">
-              {this.state.rooms.map((room, index) =>
-                <div className='inner_room_list' key={index - 1}>
-                  <li key={index} onClick = {(e) => this.roomNameClickHandler(room)} className='room_name'>{room.name}</li>
-                  <span key={index + 1} className='icon ion-md-trash' onClick = {() => this.removeRoomHandler(room)}></span>
-                </div>
-              )}
-            </ul>
-        
+        </Popup>
 
-
+      return(
+        <div>
+          <button id='create_room_btn' onClick={this.openModal}>New Room</button>
+          {popup}
+          <ul className="sidebar-nav">
+            {this.state.rooms.map((room, index) =>
+              <div className='inner_room_list' key={index - 1}>
+                <li key={index} onClick = {(e) => this.roomNameClickHandler(room)} className='room_name'>{room.name}</li>
+                <span key={index + 1} className='icon ion-md-trash' onClick = {() => this.removeRoomHandler(room)}></span>
+              </div>
+            )}
+          </ul>
         </div>
     );
   }

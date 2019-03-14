@@ -67,10 +67,10 @@ class App extends Component {
   render() {
     return (
       <div className="App" >
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
         <div className="sidebar-nav-fixed">
-            <div className='col-sm-4 sidebar'>
+            <div className='col-sm-3 col-md-2 sidebar'>
               <img  src={logo} alt='logo'/>
               <User 
                 firebase={ firebase }
@@ -87,7 +87,7 @@ class App extends Component {
                 />
             </div>
           </div>
-            <div className='col-sm-8'>
+            <div className='col-sm-9 col-sm-offset-3 col-md-10- col-md-offset-2 main'>
                 <Nav
                   chatTitle={this.state.activeRoomName}
                 />
@@ -112,16 +112,4 @@ class App extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//       actRoomName: state.activeRoomName
-//   };
-// }
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-
-
-//   }
-// }
 export default App;

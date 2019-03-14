@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-var moment = require('moment');
+
 
 class MessageList extends Component {
     constructor(props){
@@ -48,8 +48,7 @@ class MessageList extends Component {
                             <span key= {index + 3} className='rowDate'> {room.sentAt}</span>
                             
                         </div>
-                         
-                        ))}
+                    ))}
             </div>
         )
     }
